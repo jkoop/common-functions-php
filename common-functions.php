@@ -15,7 +15,7 @@ function e(string $string, bool $addExtraTags = true): string {
  * escape for *nix shell
  */
 function se(string $string): string {
-    return "'" . substr("'", "'\''", $string) . "'";
+    return "'" . str_replace("'", "'\''", $string) . "'";
 }
 
 /**
