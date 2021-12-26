@@ -61,6 +61,10 @@ function require_console_only() {
 function mimetype(string $filepath, bool $cache = true): string {
     static $mimetypes = [];
 
+    if ($filepath[0] != '/') {
+        $filepath = getcwd() . '/' . $filepath;
+    }
+
     if ($cache) {
         if (!isset($mimetypes[$filepath])) {
             $mimetypes[$filepath] = exec('file -b --mime-type ' . se($filepath));
