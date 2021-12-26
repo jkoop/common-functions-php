@@ -12,6 +12,13 @@ function e(string $string, bool $addExtraTags = true): string {
 }
 
 /**
+ * escape for *nix shell
+ */
+function se(string $string): string {
+    return "'" . substr("'", "'\''", $string) . "'";
+}
+
+/**
  * emit http status code and exit
  */
 function abort(int $status, string $message) {
@@ -49,4 +56,17 @@ function require_console_only() {
     if (php_sapi_name() != 'cli') {
         die('This script must be run from the command line.');
     }
+}
+
+function mimetype(string $filepath, bool $cache = true): string {
+    static $mimetypes = [];
+
+    if ($cache) {
+        if (!isset($mimetypes[$filepath])) {
+            $mimetypes[$filepath] = exec('file -b --mime-type ' . se($filepath));
+        }
+        return $mimetypes[$filepath];
+    }
+
+    return exec('file -b --mime-type ' . se($filepath));
 }
