@@ -44,3 +44,9 @@ function dump(...$args): void {
 function echo_to_stderr(string $string): void {
     fwrite(STDERR, $string);
 }
+
+function require_console_only() {
+    if (php_sapi_name() != 'cli') {
+        die('This script must be run from the command line.');
+    }
+}
