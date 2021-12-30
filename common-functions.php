@@ -83,6 +83,7 @@ define('MIMETYPES_BY_EXTENSION', [
     'nc'      => 'application/x-netcdf',
     'oda'     => 'application/oda',
     'ogg'     => 'audio/ogg',
+    'opus'     => 'audio/opus',
     'pbm'     => 'image/x-portable-bitmap',
     'pdb'     => 'chemical/x-pdb',
     'pdf'     => 'application/pdf',
