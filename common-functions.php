@@ -2,6 +2,7 @@
 
 define('MIMETYPES_BY_EXTENSION', [
     // https://gist.github.com/raphael-riel/1253986
+    'aac'     => 'audio/aac',
     'ai'      => 'application/postscript',
     'aif'     => 'audio/x-aiff',
     'aifc'    => 'audio/x-aiff',
@@ -62,6 +63,9 @@ define('MIMETYPES_BY_EXTENSION', [
     'lha'     => 'application/octet-stream',
     'lzh'     => 'application/octet-stream',
     'm3u'     => 'audio/x-mpegurl',
+    'm4a'     => 'audio/aac',
+    'm4b'     => 'audio/aac',
+    'm4v'     => 'video/mp4',
     'man'     => 'application/x-troff-man',
     'mathml'  => 'application/mathml+xml',
     'me'      => 'application/x-troff-me',
