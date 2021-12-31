@@ -255,3 +255,9 @@ if (!function_exists('str_starts_with')) {
         return strpos($haystack, $needle) === 0;
     }
 }
+
+if (!function_exists('str_contains')) {
+    function str_contains($haystack, $needle) {
+        return strpos($haystack, $needle) !== false;
+    }
+}
